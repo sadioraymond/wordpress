@@ -17,6 +17,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
 
+/*Baisser l'entête */
+body.logged-in #header{
+	top: 32px; /*Les 32px représentent la taille de l'admin bar*/
+}
+
 /*
 	Future Imperfect by HTML5 UP
 	html5up.net | @ajlkn

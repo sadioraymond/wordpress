@@ -6,20 +6,21 @@
 -->
 <html>
 	<head>
-		<title>Future Imperfect by HTML5 UP</title>
+		<title><?php bloginfo('name'); ?></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-        <?php wp_head()?>
+        <?php wp_head();?>
 	</head>
-	<body>
+	<!--body_class() nous donne le contexte cad la ou on se trouve dans le site-->
+	<body <?php body_class(); ?>>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="#">Future Imperfect</a></h1>
+						<h1><a href="#"><?php bloginfo('name'); ?></a></h1>
 						<nav class="links">
 							<ul>
 								<li><a href="#">Lorem</a></li>
