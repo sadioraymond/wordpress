@@ -26,6 +26,7 @@ add_theme_support( 'post-formats', array(
 		'gallery',
 		'audio',
 	) );
+	add_theme_support('post-thumbnails');
  }
 add_action( 'after_setup_theme', 'future_setup' );
 
@@ -54,4 +55,9 @@ function future_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'future_scripts' );
+
+function custom_excerpt_length(){
+	return 10;
+}
+add_filter('excerpt_length','custom_excerpt_length');
  ?>
