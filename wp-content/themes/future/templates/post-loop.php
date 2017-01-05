@@ -15,7 +15,7 @@
 								</header>
 								<?php if ( has_post_thumbnail() &&  is_single() ) { ?>
 								<a href="<?php the_permalink(); ?>">
-				                <?php the_post_thumbnail('thumbnail'); ?>
+				                <?php the_post_thumbnail('medium'); ?>
 			                    </a>
 								<?php }else{
 									the_post_thumbnail('large');
