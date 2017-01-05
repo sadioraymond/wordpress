@@ -6,7 +6,7 @@
 								<header>
 									<div class="title">
 										<h2><a href="<?php the_permalink(); ?>"><?php the_title();?> 1</a></h2>
-										<p><?php the_title_attribute(); ?></p>
+										<p><?php the_field('man') ?></p>
 									</div>
 									<div class="meta">
 										<time ><?php the_time('d-m-y'); ?></time>
@@ -25,8 +25,11 @@
 	                          							
 								</p>
 								<?php } else {
-									the_content();
-								} ?>
+									the_content();?>
+									<li><a href="" > <?php next_post_link('%link', 'Article Suivant') ?></a></li>
+								    <li><a href="#" ><?php previous_post_link('%link', 'Article Précedent')?></a></li>
+								<?php } ?>
+								
 								
 								<footer>
 								<?php if(is_home()) {?>
