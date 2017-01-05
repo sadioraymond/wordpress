@@ -32,7 +32,7 @@
 								
 								
 								<footer>
-								<?php if(is_home()) {?>
+								<?php if(!is_single()) {?>
 									<ul class="actions">
 										<li><a href="<?php the_permalink(); ?>" class="button big">Continue Reading</a></li>
 									</ul>
