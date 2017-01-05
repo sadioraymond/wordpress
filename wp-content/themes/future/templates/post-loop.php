@@ -20,7 +20,7 @@
 								<?php }else{
 									the_post_thumbnail('large');
 								} ?>
-								<?php if(is_home()) {?>
+								<?php if(!is_single()) {?>
                                  <p><?php the_excerpt();?>
 	                          							
 								</p>
