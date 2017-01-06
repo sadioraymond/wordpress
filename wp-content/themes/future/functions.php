@@ -34,6 +34,7 @@ add_theme_support( 'post-formats', array(
 	'width'       => 72,
 	'flex-width'  => false,
 ) );
+   add_theme_support( 'html5',array('search-form'));
 register_nav_menus( array(
 		'site-nav'    => __( 'En Haut de page', 'future' ),
 	) );

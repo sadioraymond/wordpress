@@ -42,7 +42,7 @@
 										<?php $categories = get_the_category();?>
 					                    <li><a href="<?php echo get_category_link($categories[0]->term_id); ?>"><?php echo $categories[0]->name; ?></a></li>
 										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment"><?php get_comments_number(); ?></a></li>
+										<li><a href="#" class="icon fa-comment"><?php get_comment_count(); ?></a></li>
 									</ul>
 								</footer>
 							</article>

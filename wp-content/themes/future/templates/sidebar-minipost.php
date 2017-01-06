@@ -1,6 +1,6 @@
 <?php 
 	$args = array(
-		'tag' => 'populaire',
+		'tag' => 'popu',
 		'posts_per_page' => 4
 	);
 
