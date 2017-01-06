@@ -11,6 +11,7 @@
 									<div class="meta">
 										<time ><?php the_time('d-m-y'); ?></time>
 										<a href="#" class="author"><span class="name"><?php the_author(); ?></span><img src="images/avatar.jpg" alt="" /></a>
+									    <?php the_tags( 'Etiquettes: ', ', ', '<br />' ); ?> 
 									</div>
 								</header>
 								<?php if ( has_post_thumbnail() &&  is_single() ) { ?>
@@ -22,14 +23,14 @@
 								} ?>
 								<?php if(!is_single()) {?>
                                  <p><?php the_excerpt();?>
-	                          							
 								</p>
 								<?php } else {
-									the_content();?>
+									the_content();
+									comments_template();
+									?>
 									<li><a href="" > <?php next_post_link('%link', 'Article Suivant') ?></a></li>
 								    <li><a href="#" ><?php previous_post_link('%link', 'Article Précedent')?></a></li>
 								<?php } ?>
-								
 								
 								<footer>
 								<?php if(!is_single()) {?>
@@ -38,9 +39,10 @@
 									</ul>
 									<?php }?>
 									<ul class="stats">
-										<li><a href="#"> <?php the_category( ', ' ); ?></a></li>
+										<?php $categories = get_the_category();?>
+					                    <li><a href="<?php echo get_category_link($categories[0]->term_id); ?>"><?php echo $categories[0]->name; ?></a></li>
 										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
+										<li><a href="#" class="icon fa-comment"><?php get_comments_number(); ?></a></li>
 									</ul>
 								</footer>
 							</article>

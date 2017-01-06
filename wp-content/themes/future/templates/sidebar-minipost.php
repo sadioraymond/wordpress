@@ -1,45 +1,45 @@
+<?php 
+	$args = array(
+		'tag' => 'populaire',
+		'posts_per_page' => 4
+	);
+
+	$popQuery = new WP_Query($args);
+?>
+<?php if ( $popQuery->have_posts()) : ?>
+		
 <section>
 								<div class="mini-posts">
-
+                                    
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="#">Mini1</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											    <div class="title">
+										<h2><a href="<?php the_permalink(); ?>"><?php the_title();?> 1</a></h2>
+										<p><?php the_field('man') ?></p>
+									</div>
+												<time ><?php the_time('d-m-y'); ?></time>
+												<a href="#" class="author"><span class="name"><?php the_author(); ?></span><img src="images/avatar.jpg" alt="" /></a>
 											</header>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="#">Mini2</a></h3>
-												<time class="published" datetime="2015-10-19">October 19, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="#">Mini3</a></h3>
-												<time class="published" datetime="2015-10-18">October 18, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="#">Mini4</a></h3>
-												<time class="published" datetime="2015-10-17">October 17, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<?php if ( has_post_thumbnail() &&  is_single() ) { ?>
+								<a href="<?php the_permalink(); ?>">
+				                <?php the_post_thumbnail('medium'); ?>
+			                    </a>
+								<?php }else{
+									the_post_thumbnail('thumbnail');
+								} ?>
+								<?php if(!is_single()) {?>
+                                 <p><?php the_excerpt();?>
+	                          							
+								</p>
+								<?php } else {
+									the_content();?>
+								<?php } ?>
 										</article>
 
 								</div>
 							</section>
+<?php 
+	endif;
+	wp_reset_postdata();
+?>

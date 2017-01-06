@@ -17,7 +17,7 @@
 
 		<!-- Scripts -->
 			
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			
 
 			<?php wp_footer()?>
 

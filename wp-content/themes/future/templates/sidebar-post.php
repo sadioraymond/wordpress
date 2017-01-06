@@ -1,49 +1,36 @@
-<section>
-								<ul class="posts">
-									<li>
-										<article>
+<?php if(have_comments()) : 
+while (have_posts()) :the_post();
+?>
+                           <section>
+                                   <div class="posts">
+                                    
+									<!-- Mini Post -->
+										<article class="posts">
 											<header>
-												<h3><a href="#">Premier</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+											    <div class="title">
+										<h2><a href="<?php the_permalink(); ?>"><?php the_title();?> 1</a></h2>
+										<p><?php the_field('man') ?></p>
+									</div>
+												<time ><?php the_time('d-m-y'); ?></time>
+												<a href="#" class="author"><span class="name"><?php the_author(); ?></span><img src="images/avatar.jpg" alt="" /></a>
 											</header>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<?php if ( has_post_thumbnail() &&  is_single() ) { ?>
+								<a href="<?php the_permalink(); ?>">
+				                <?php the_post_thumbnail('medium'); ?>
+			                    </a>
+								<?php }else{
+									the_post_thumbnail('thumbnail');
+								} ?>
+								<?php if(!is_single()) {?>
+                                 <p><?php the_excerpt();?>
+	                          							
+								</p>
+								<?php } else {
+									the_content();?>
+								<?php } ?>
 										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Deuxieme</a></h3>
-												<time class="published" datetime="2015-10-15">October 15, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Troisieme</a></h3>
-												<time class="published" datetime="2015-10-10">October 10, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic10.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Quatrieme</a></h3>
-												<time class="published" datetime="2015-10-08">October 8, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic11.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Cinquieme</a></h3>
-												<time class="published" datetime="2015-10-06">October 7, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic12.jpg" alt="" /></a>
-										</article>
-									</li>
-								</ul>
+
+								</div>
 							</section>
+
+<?php endwhile;endif?>

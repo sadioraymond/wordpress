@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title><?php bloginfo('name'); ?></title>
+		
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
@@ -23,11 +23,9 @@
 						<h1><a href="#"><?php bloginfo('name'); ?></a></h1>
 						<nav class="links">
 							<ul>
-								<li><a href="#">Lorem</a></li>
-								<li><a href="#">Ipsum</a></li>
-								<li><a href="#">Feugiat</a></li>
-								<li><a href="#">Tempus</a></li>
-								<li><a href="#">Adipiscing</a></li>
+								<?php if(has_nav_menu( 'site-nav') ):
+						wp_nav_menu( array( 'theme-location' => 'site-nav' ) );
+						 endif?>
 							</ul>
 						</nav>
 						<nav class="main">

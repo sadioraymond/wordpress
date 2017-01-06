@@ -1,0 +1,5 @@
+<title><?php bloginfo('name'); ?></title>
+next_post_link_attributes(hook)
+
+next_posts_link('Suivant')
+previous_posts_link('Precedent)
